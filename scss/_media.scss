@@ -1,0 +1,51 @@
+/* MEDIA */
+@media (max-width:768px) {
+
+    /* footer */
+    .footerGrupo1 {
+        width: 70%;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 30px;
+        padding: 20px 0px;
+    }
+
+    .caja {
+
+        ul {
+            padding: 0px;
+        }
+
+        h3 {
+            text-align: center;
+            padding: 0px;
+        }
+
+        li {
+            text-align: center;
+        }
+
+    }
+
+    .redSocial {
+        justify-content: center;
+    }
+
+    .logoFooter {
+        width: 250px;
+    }
+
+}
+
+@media(max-width:992px) {
+
+    //buscador header 
+
+    .encabezado {
+        form {
+            padding: 20px 0px 20px 20px;
+        }
+    }
+}
+
+
+/*FIN MEDIA*/

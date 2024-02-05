@@ -1,0 +1,99 @@
+/*INCIO CONTACTO*/
+/* datos */
+
+.datos {
+    background: linear-gradient(to right, orange, #e4ac20);
+    padding: 20px;
+    border-radius: 15px;
+    max-height: 800px;
+    box-shadow: 0px 2px 6px;
+}
+
+.mapa{
+    overflow:hidden;
+    padding-bottom:60%;
+    position:relative;
+    height:0;
+    
+    iframe{
+        left:0;
+        top:0;
+        height:100%;
+        width:100%;
+        position:absolute;
+        max-height: 440px;
+    }
+}
+
+
+
+.medios {
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20px;
+
+    svg {
+        width: 25px;
+        height: 25px;
+        color: black;
+    }
+    
+    p {
+        margin-bottom:  0px;
+        margin-left: 25px;
+        @include textoConParametos (1rem, 400);
+        color: black
+    }
+}
+
+.textoDatos {
+    @include textoConParametos (1.2rem, 400);
+    margin: 15px 0px;
+    color: black
+}
+
+.tituloDatos {
+    @include textoConParametos (1.4rem, 700);
+    margin-top: 10px;
+    text-align: center;
+    color: black;
+}
+
+/* formulario */
+
+input, textarea, select {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    @include textoConParametos (1rem, 300);
+    margin: 0px 0px 20px 0px;
+}
+
+label {
+    display: block;
+    margin: 0px 0px 10px 0px;
+    @include textoConParametos (1.2rem, 700);
+    color: white;
+}
+
+/* FIN DE SECCION CONTACTO */
+
+/* INICIO BTN */ 
+
+.btn-primary {
+    background-color: orange;
+    color: black;
+    @include textoConParametos (1.2rem, 500);
+    border: none;
+    box-shadow: 0px 3px 8px;
+    
+    &:hover {
+        background-color: rgb(202, 101, 19);
+        color: black;
+    }
+}
+
+/*FIN BTN*/

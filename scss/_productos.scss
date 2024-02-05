@@ -1,0 +1,55 @@
+/*INICIO CARDS PRODUCTOS*/
+.contendorCards{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cardProductos{
+    flex: 1;
+    max-width: 100%;
+    background-color: #0f0f0f;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 10px;
+    
+
+    img {
+        width: 100%;
+        max-height: 290px;
+        margin-bottom: 10px;
+        object-fit: cover;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 90%);
+    }
+    
+    h2{
+        text-align: center;
+        font-size: 1rem;
+        font-weight: 700;
+        color: white;
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+    p{
+        text-align: center;
+        font-size: 1.2rem;
+        font-weight: 500;
+        color: white;
+    }
+
+    &:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 16px rgb(68, 68, 68);
+    }
+}
+/*FIN CARDS PRODUCTOS*/
+
+/*INICIO TITULO PRINCIPAL*/
+
+.tituloPrincipal{
+    @include textoConParametos (1.6rem, 700);
+    text-align: center;
+    margin-top: 30px;
+    color: white;
+}

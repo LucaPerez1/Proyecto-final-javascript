@@ -1,0 +1,321 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: rgb(36, 36, 36);
+}
+
+.logo {
+  width: 100px;
+  margin-left: 20px;
+  margin-top: 8px;
+}
+
+.encabezado {
+  background-color: black;
+  border-top: 5px solid #ffa500;
+}
+.encabezado nav ul {
+  margin-right: 30px;
+}
+.encabezado nav ul li {
+  display: inline-block;
+  list-style: none;
+  margin: 0 20px;
+}
+.encabezado nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+.encabezado nav ul li a:hover {
+  color: orange;
+}
+.encabezado form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.encabezado form input {
+  margin-bottom: 0px;
+}
+
+.carrito {
+  width: 24px;
+  height: 24px;
+  color: white;
+  margin-left: 8px;
+  margin-right: 20px;
+}
+
+/*INICIO FOOTER*/
+footer {
+  width: 100%;
+  background-color: black;
+}
+
+.footerGrupo1 {
+  width: 100%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 50px;
+  padding-top: 20px;
+}
+
+figure {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoFooter {
+  width: 220px;
+  padding-right: 30px;
+}
+
+.caja h3 {
+  color: white;
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  padding-left: 30px;
+  padding-top: 10px;
+}
+.caja a {
+  color: white;
+  margin-bottom: 10px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+.caja a:hover {
+  text-decoration: underline 2px;
+}
+.caja li {
+  list-style: none;
+}
+.caja ul {
+  padding-left: 30px;
+  margin: 0px;
+}
+
+.redSocial {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.redSocial a {
+  text-decoration: none;
+  width: 45px;
+  height: 45px;
+  line-height: 45px;
+  margin-right: 18px;
+}
+.redSocial svg {
+  width: 32px;
+  height: 32px;
+  transition: 0.4s;
+}
+.redSocial svg:hover {
+  width: 48px;
+  height: 48px;
+}
+
+.footerGrupo2 {
+  background-color: black;
+  color: rgb(145, 145, 145);
+  padding: 10px 10px;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+/*INICIO CARDS PRODUCTOS*/
+.contendorCards {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cardProductos {
+  flex: 1;
+  max-width: 100%;
+  background-color: #0f0f0f;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 10px;
+}
+.cardProductos img {
+  width: 100%;
+  max-height: 290px;
+  margin-bottom: 10px;
+  object-fit: cover;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 90%);
+}
+.cardProductos h2 {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 700;
+  color: white;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.cardProductos p {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: white;
+}
+.cardProductos:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 16px rgb(68, 68, 68);
+}
+
+/*FIN CARDS PRODUCTOS*/
+/*INICIO TITULO PRINCIPAL*/
+.tituloPrincipal {
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 30px;
+  color: white;
+}
+
+/*INCIO CONTACTO*/
+/* datos */
+.datos {
+  background: linear-gradient(to right, orange, #e4ac20);
+  padding: 20px;
+  border-radius: 15px;
+  max-height: 800px;
+  box-shadow: 0px 2px 6px;
+}
+
+.mapa {
+  overflow: hidden;
+  padding-bottom: 60%;
+  position: relative;
+  height: 0;
+}
+.mapa iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  max-height: 440px;
+}
+
+.medios {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.medios svg {
+  width: 25px;
+  height: 25px;
+  color: black;
+}
+.medios p {
+  margin-bottom: 0px;
+  margin-left: 25px;
+  font-size: 1rem;
+  font-weight: 400;
+  color: black;
+}
+
+.textoDatos {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin: 15px 0px;
+  color: black;
+}
+
+.tituloDatos {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-top: 10px;
+  text-align: center;
+  color: black;
+}
+
+/* formulario */
+input, textarea, select {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 300;
+  margin: 0px 0px 20px 0px;
+}
+
+label {
+  display: block;
+  margin: 0px 0px 10px 0px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: white;
+}
+
+/* FIN DE SECCION CONTACTO */
+/* INICIO BTN */
+.btn-primary {
+  background-color: orange;
+  color: black;
+  font-size: 1.2rem;
+  font-weight: 500;
+  border: none;
+  box-shadow: 0px 3px 8px;
+}
+.btn-primary:hover {
+  background-color: rgb(202, 101, 19);
+  color: black;
+}
+
+/*FIN BTN*/
+/* MEDIA */
+@media (max-width: 768px) {
+  /* footer */
+  .footerGrupo1 {
+    width: 70%;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 30px;
+    padding: 20px 0px;
+  }
+  .caja ul {
+    padding: 0px;
+  }
+  .caja h3 {
+    text-align: center;
+    padding: 0px;
+  }
+  .caja li {
+    text-align: center;
+  }
+  .redSocial {
+    justify-content: center;
+  }
+  .logoFooter {
+    width: 250px;
+  }
+}
+@media (max-width: 992px) {
+  .encabezado form {
+    padding: 20px 0px 20px 20px;
+  }
+}
+/*FIN MEDIA*/
+
+/*# sourceMappingURL=estilo.css.map */
