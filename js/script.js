@@ -83,7 +83,7 @@ let edad = prompt("¿Cuál es tu edad?");
 let ingreso = false;
 
 if (edad >= 18) {
-    alert("Bienvenido a Gold elixir\n\nNUEVA PROMO: si tu compra supera los 50.000$ tenes un 10% de descuento.");
+    alert("Bienvenido a Gold elixir\n\n!NUEVA PROMO¡: si tu compra supera los 50.000$ tenes un 10% de descuento.");
     ingreso = true;
 } else {
     alert("Ingreso inválido, la venta de alcohol no está permitida a menores de 18 años");
@@ -105,7 +105,7 @@ if (ingreso) {
     
     let productosCarrito = "Detalles de compra: \n\n" + carrito.listaCarrito();
     let subtotal = "Subtotal: $" + carrito.calcularTotal();
-    let descuento = "Descuento: $" + carrito.aplicarDescuento();
+    let descuento = "Descuento: -$" + carrito.aplicarDescuento();
     let montoFinal = "Total: $" + Math.round(carrito.calcularTotal() - carrito.aplicarDescuento());
     alert(productosCarrito + "\n" + subtotal + "\n" + descuento + "\n" + montoFinal);
 }
