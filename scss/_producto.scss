@@ -1,0 +1,138 @@
+//INICIO PRODUCTO ESPECIFICO 
+.cardProducto {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-bottom: 40px;
+
+    img {
+        display: flex;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.contenedorImagen{
+    height: 700px;
+}
+
+.informacionProducto {
+    background-color: black;
+    padding: 30px 30px 30px 30px;
+
+    h2 {
+        color: white;
+        @include textoConParametos (1.8rem, 900);
+        margin-bottom: 30px;
+    }
+
+    h3 {
+        color: white;
+        @include textoConParametos (1.5rem, 400);
+        margin-bottom: 40px;
+    }
+
+    a {
+        color: #ffa500;
+        @include textoConParametos (1rem, 300);
+        text-decoration: none;
+        
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.descuento {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 15px;
+
+    svg {
+        color: #ffa500;
+        margin-right: 15px;
+    }
+
+    h4 {
+        color: white;
+        @include textoConParametos (1.1rem, 200);
+        margin-bottom: 0px;
+    }
+}
+
+//inicio seccion envio
+.envio {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 10px;
+
+    input {
+        border-radius: 5px 0px 0px 5px;
+        margin-bottom: 0px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        @include textoConParametos (1rem, 500);
+        background-color: black;
+        border: white solid 1px;
+        color: white;
+    }
+}
+
+.btnEnvio {
+    background-color: orange;
+    color: black;
+    @include textoConParametos (1rem, 500);
+    border: white solid 1px;
+    border-radius: 0px 5px 5px 0px;
+    padding: 5px 10px 5px 10px;
+}
+
+.iconoEnvio {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    margin-top: 30px;
+
+    svg {
+        margin-right: 15px;
+        color: white;
+    }
+
+    h4 {
+        margin: 0px;
+        color: white;
+        @include textoConParametos (1rem,500)
+    }
+}
+//fin seccion envio 
+
+//inicio seccion locales
+.locales{
+    margin-top: 20px;
+    border-top: white solid 1px;
+    padding-top: 20px;
+
+    svg {
+        margin-right: 15px;
+        color: white;
+    }
+
+    h4 {
+        margin: 0px;
+        color: white;
+        @include textoConParametos (1rem,500)
+    }
+
+    p {
+        color: white;
+        @include textoConParametos (1rem, 300);
+        margin-top: 20px;
+        margin-bottom: 0px;
+        padding: 15px;
+        border: rgb(94, 93, 93) 1px solid;
+    }
+}
+
+//FIN PRODUCTO ESPECIFICO
