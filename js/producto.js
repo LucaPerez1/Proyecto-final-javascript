@@ -18,7 +18,7 @@ function renderizarProducto() {
         <h4><strong>15% de descuento</strong> pagando en con efectivo o transferencia</h4>
     </div>
     <a href="#">Ver medios de pago</a>
-    <input class="btn-primary my-3" type="submit" value="Agregar al carrito">
+    <input class="btn-primary my-3" onclick="agregarProductoAlCarrito()"  type="submit" value="Agregar al carrito">
     <div>
         <div class="iconoEnvio"">
             <svg xmlns=" http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
@@ -32,7 +32,7 @@ function renderizarProducto() {
             <input type="text" class="col-xl-6" placeholder="Tu codigo postal">
             <button class="btnEnvio col-xl-6">Calcular</button>
         </div>
-        <a href="https://www.correoargentino.com.ar/formularios/cpa">No sé mi código postal</a>
+        <a href="https://www.correoargentino.com.ar/formularios/cpa" target="_blank">No sé mi código postal</a>
     </div>
     <div class="locales">
         <div class="d-flex">

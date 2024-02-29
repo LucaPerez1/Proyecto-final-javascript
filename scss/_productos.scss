@@ -45,11 +45,37 @@
 }
 /*FIN CARDS PRODUCTOS*/
 
-/*INICIO TITULO PRINCIPAL*/
+/*INICIO TITULOS*/
 
 .tituloPrincipal{
     @include textoConParametos (1.6rem, 700);
     text-align: center;
     margin-top: 30px;
     color: white;
+}
+
+//FIN TITULOS
+
+
+//BOTON DESPLEGABLE
+.desplegable {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+
+    select {
+        background-color:  rgb(36, 36, 36);
+        color: white;
+        @include textoConParametos (1rem, 500);
+        border: 1px white solid;
+        padding: 8px 20px;
+        margin-bottom: 0px;
+    }
+
+    label{
+    @include textoConParametos (1.1rem, 500);
+    color: white;
+    margin-bottom: 0px;
+    margin-right: 15px;
+    }
 }
