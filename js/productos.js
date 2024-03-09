@@ -1,17 +1,14 @@
 // INICIO REDNERIZAR PRODUCTOS
-function renderizarProductos() {
-    const productos = traerProductosLS();
-    const categoria = obtenerCategoria();
-    const productosFiltro = categoria === "todos" ? productos : productos.filter(item => item.categoria === categoria);
+function renderizarProductos(productosFiltro) {
 
     let contenido = "";
     for (const producto of productosFiltro) {
-        contenido += `<div class="col-xl-3 col-md-6 col-sm-6 contendorCards">
+        contenido += `<div class="col-xl-3 col-md-4 col-sm-6 contendorCards">
             <a href="producto.html" onclick="verProducto(${producto.id});" class="cardProductos">
                 <img src="${producto.imagen}" alt="${producto.nombre}">
-                <div>
+                <div class="contenedorTextoCards">
                     <h2>${producto.nombre}</h2>
-                    <p>${producto.precio}</p>
+                    <p>$${producto.precio}</p>
                 </div>
             </a>
         </div>`;
@@ -21,10 +18,7 @@ function renderizarProductos() {
 }
 //FIN FUNCION RENDERIZAR PRODUCTOS
 
-function recargarPagina() {
-    // Recargar la página
-    location.reload();
-}
-
-renderizarProductos();
-
+//
+document.getElementById('categorias').addEventListener('change', function () {
+    verCategoria(this.value);
+});

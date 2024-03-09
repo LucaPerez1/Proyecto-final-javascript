@@ -42,9 +42,33 @@
 }
 
 .carrito {
-    width: 24px;
-    height: 24px;
-    color: white;
-    margin-left: 8px;
-    margin-right: 20px;
+    position: relative;
+    text-decoration: none;
+
+    span{
+        position: absolute;
+        top: -4px;
+        right: 11px;
+        background-color: red;
+        color: white;
+        border-radius: 100%;
+        padding: 1px 5px;
+        @include textoConParametos (0.8rem, 500)
+    }
+    svg {
+        width: 24px;
+        height: 24px;
+        color: white;
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-top: 6px;
+        margin-bottom: 4px;
+    }
+
+    p{
+        color: white;
+        margin: 0px;
+        text-align: center;
+        @include textoConParametos (0.8rem, 500);
+    }
 }

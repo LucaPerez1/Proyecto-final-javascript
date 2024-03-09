@@ -1,0 +1,81 @@
+.contenedorCarrito {
+    background-color: black;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+    justify-content: space-between;   
+    margin-bottom: 10px;
+    margin-top: 10px;
+    box-shadow: 0 12px 16px rgb(39, 39, 39);
+
+    img{
+        height: 70px;      
+    }   
+
+    h2 {
+        color: white;
+        @include textoConParametos (1rem, 400);
+        margin: 0px;
+        text-align: center;
+    }
+    
+    h3  {
+        color: white;
+        @include textoConParametos (1rem, 400);
+        margin: 0px;
+        text-align: center;
+    }
+
+    svg {
+        color: white;
+        margin: 0px;
+        padding-right: 20px;
+        cursor: pointer;
+    }
+}
+
+.total {
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px 10px 15px;
+    border-top: 2px solid white;
+
+    p {
+        @include textoConParametos (1rem, 500);
+        margin: 0px;
+        color: white;
+    }
+}
+
+.carritoVacio {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+
+    svg {
+        width: 170px;
+        height: 170px;
+        color: white;
+    }
+
+    h2 {
+        color: white;
+        @include textoConParametos(1.4rem,700);
+        margin-top: 40px;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+    
+    a {
+        text-decoration: none;
+        @include textoConParametos (1.2rem, 500);
+        padding: 6px 20px;
+        border-radius: 5px;
+    }
+}

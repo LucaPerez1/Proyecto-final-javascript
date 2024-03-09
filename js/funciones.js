@@ -1,34 +1,25 @@
-const productos = [
-    { id: 1, nombre: "Whisky Jhonny Walker Black Label 750ml", precio: "$30.000,00", imagen: "../img/Black-label.jpg", categoria: "whisky" },
-    { id: 2, nombre: "Fernet branca 750ml", precio: "$8.000,00", imagen: "../img/Fernet-branca.jpg", categoria: "amargo"},
-    { id: 3, nombre: "Vino tinto Luigi Bosca Malbec 750ml", precio: "$7.000,00", imagen: "../img/Luigi-bosca.jpg", categoria: "vino"},
-    { id: 4, nombre: "Ron Havana Club Añejo Especial Dorado 750ml", precio: "$10.000,00", imagen: "../img/Havana-club.jpg", categoria: "ron"},
-    { id: 5, nombre: "Vodka smirnoff 700ml", precio: "$3.400,00", imagen: "../img/Smirnoff.jpg", categoria: "vodka"},
-    { id: 6, nombre: "Cerveza Brahama Chopp lata 473ml x6 unidades", precio: "$10.500,00", imagen: "../img/Brahma.jpg", categoria: "cerveza"},
-    { id: 7, nombre: "Fernet branca 750ml + 2 cocas 2.25ml", precio: "$11.000,00", imagen: "../img/Fernet con coca.jpg", categoria: "promos"},
-    { id: 8, nombre: "Vodka Skyy durazno 750ml", precio: "$6.000,00", imagen: "../img/Vodka-Skyy.jpg", categoria: "vodka"},
-    { id: 9, nombre: "Cerveza Heineken Rubia lata 473ml x6 unidades",precio: "$8.550,00", imagen: "../img/heineken.png", categoria: "cerveza"},
-    { id: 10, nombre: "Whisky Jhonny Walker Blue Label 750ml",precio: "$250.000,00", imagen: "../img/blue-label.png", categoria: "whisky"},
-    { id: 11, nombre: "Gin spirito blue 700ml",precio: "$8.800,00", imagen: "../img/gin-spirito-blue.png", categoria: "gin"},
-    { id: 12, nombre: "Cerveza Corona American Adjunct Lager 330mL x6 unidades",precio: "$7.300,00", imagen: "../img/coronax6.jpg", categoria: "cerveza"},
-]
+//FUNCIONES LS PRODUCTOS 
+const guardarProductosLS = () => {
+    fetch('../js/catalogo.json')
+        .then(response => response.json())
+        .then(data => {
 
-//Funciones local storage productos
-const guardarProductosLS = (productos) => {
-    localStorage.setItem("productos", JSON.stringify(productos))
+            localStorage.setItem('productos', JSON.stringify(data));
+
+        })
 }
 
 const traerProductosLS = () => {
     return JSON.parse(localStorage.getItem("productos")) || [];
 }
 
-//Funciones obtener ID
+//FUNCIONES PARA OBTENER LA ID
 const obtenerIdProductos = () => {
     return JSON.parse(localStorage.getItem("producto")) || 0;
 }
 
 const verProducto = (id) => {
-    localStorage.setItem("producto", JSON.stringify(id)); 
+    localStorage.setItem("producto", JSON.stringify(id));
 }
 
 const traerProductoLS = () => {
@@ -39,21 +30,46 @@ const traerProductoLS = () => {
     return producto;
 }
 
-//Funciones obtener categoria
+//FUNCIONES PARA OBTENER CATEGORIA
 const verCategoria = (id) => {
     localStorage.setItem("categoria", JSON.stringify(id));
-} 
-const obtenerCategoria = () => {
-    return JSON.parse(localStorage.getItem("categoria"))  || "todos";
+
+    filtroCategoria();
 }
 
-//funciones carrito
+const obtenerCategoria = () => {
+    return JSON.parse(localStorage.getItem("categoria")) || 'todos';
+}
+
+window.onload = function () {
+    filtroCategoria();
+}
+
+const filtroCategoria = () => {
+    const productos = traerProductosLS();
+    const categoria = obtenerCategoria();
+    const productosFiltro = categoria === 'todos' ? productos : productos.filter(item => item.categoria === categoria);
+
+    renderizarProductos(productosFiltro);
+}
+
+//FUNNCIONES CARRITO
 const guardarCarrito = (productos) => {
-    localStorage.setItem("carrito",JSON.stringify(productos))
+    localStorage.setItem("carrito", JSON.stringify(productos))
 }
 
 const traerCarrito = () => {
-    return JSON.parse(localStorage.getItem("carrito")) || []; 
+    return JSON.parse(localStorage.getItem("carrito")) || [];
+}
+
+const totalProductos = () => {
+    const carrito = traerCarrito();
+
+    return carrito.length;
+}
+
+const botonCarrito = () => {
+    document.getElementById("botonCantidad").innerHTML = totalProductos();
 }
 
 const agregarProductoAlCarrito = () => {
@@ -61,24 +77,112 @@ const agregarProductoAlCarrito = () => {
     const carrito = traerCarrito();
     carrito.push(producto);
     guardarCarrito(carrito);
+    botonCarrito();
+    renderCostoTotal();
+    notificacionProductoAgregado(producto);
 }
 
 const sumaDelTotal = () => {
     const carrito = traerCarrito();
 
-    //return carrito.reduce((acumulador, item) => acumulador += item.precio, 0)
-
-    let suma = 0 
-
-    for (const item of carrito) {
-        suma += item.precio
-    }
-
-    return suma; 
+    return carrito.reduce((acumulador, item) => acumulador += item.precio, 0)
 }
 
+const renderCostoTotal = () => {
+    document.getElementById("costoTotal").innerHTML = "$" + sumaDelTotal();
+}
 
+const eliminarCarrito = () => {
+    localStorage.removeItem("carrito")
+    renderCarrito();
+    botonCarrito();
+    renderCostoTotal();
+}
 
+const eliminarProducto = (id) => {
+    const carrito = traerCarrito();
+    const idProducto = carrito.findIndex(item => item.id === id);
 
+    if (idProducto !== -1) {
 
-guardarProductosLS(productos);
+        carrito.splice(idProducto, 1);
+
+        guardarCarrito(carrito);
+    }
+
+    renderCarrito();
+    botonCarrito();
+    renderCostoTotal();
+}
+
+const notificacionEliminarCarrito = () => {
+    Swal.fire({
+        title: "¿Seguro que quieres eliminarlo?",
+        text: "¡Eliminaras todos los productos del carrito!",
+        icon: "warning",
+        iconColor: "#ffa500",
+        background: "#242424",
+        color: "#ffffff",
+        showCancelButton: true,
+        confirmButtonColor: "#ffa500",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Eliminar",
+        cancelButtonText: "cancelar",
+    }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire({
+                title: "Eliminado",
+                background: "#242424",
+                color: "#ffffff",
+                text: "Todos los productos del carrito fueron eliminados",
+                icon: "success",
+                iconColor: "#ffa500",
+                confirmButtonColor: "#ffa500",
+            }).then(() => {
+                eliminarCarrito();
+            });
+        }
+    });
+}
+
+const notificacionProductoAgregado = (producto) => {
+
+    Toastify({
+        text: `Se agrego "${producto.nombre}" al carrito`,
+        duration: 2000,
+        avatar: `${producto.imagen}`,
+        className: "notificaionAgregado",
+        backgroundColor: "#ffa500",
+        offset: {
+            x: 0,
+            y: 110,
+        },
+
+    }).showToast();
+
+}
+
+const finalizarCompra = () => {
+    Swal.fire({
+        title: "!Gracias por su Compra!",
+        text: "El total a pagar es $" + sumaDelTotal(),
+        background: "#242424",
+        color: "#ffffff",
+        imageUrl: "../img/Logo 2-04.png",
+        imageWidth: 140,
+        imageAlt: "Logo",
+        showCancelButton: true,
+        confirmButtonColor: "#ffa500",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Finalizar compra",
+        cancelButtonText: "cancelar",
+    }).then((result) => {
+        if (result.isConfirmed) {
+            eliminarCarrito();
+        }
+    });
+}
+
+guardarProductosLS();
+botonCarrito();
+renderCostoTotal();

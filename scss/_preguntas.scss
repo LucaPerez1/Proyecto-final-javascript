@@ -1,0 +1,21 @@
+.contenedorInformacion {
+    background-color: rgb(24, 24, 24);
+    padding: 30px 40px;
+    margin: 25px 15px;
+    box-shadow: 0px 8px 10px;
+    
+    h2 {
+        @include textoConParametos (1.4rem, 700);
+        margin-bottom: 30px;
+        color: white;
+        border-bottom: 5px solid #ffa500;
+        display: inline-block;
+        padding-bottom: 12px;
+    }
+    
+    p {
+        @include textoConParametos (1.2rem, 300);
+        color: white;
+        margin-bottom: 0px;
+    }
+}

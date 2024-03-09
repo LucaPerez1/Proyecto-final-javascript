@@ -1,13 +1,13 @@
 //INICIO FUNCION RENDERIZAR PRODUCTO (PAGINA ESPECIFICA DEL PRODUCTO)
 function renderizarProducto() {
     const producto = traerProductoLS();
-    let contenido = `<div class="col-xl-5 col-md-5 col-sm-12 contenedorImagen">
+    let contenido = `<div class="col-xl-5 col-md-6 col-sm-6 contenedorImagen">
     <img src="${producto.imagen}" alt="${producto.nombre}" >
 </div>
 
-<div class="col-xl-6 col-md-6 col-sm-12 informacionProducto">
+<div class="col-xl-6 col-md-6 col-sm-6 informacionProducto">
     <h2>${producto.nombre}</h2>
-    <h3>${producto.precio}</h3>
+    <h3>$${producto.precio}</h3>
     <div class="descuento">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
             class="bi bi-cash" viewBox="0 0 16 16">
@@ -43,9 +43,7 @@ function renderizarProducto() {
             </svg>
             <h4>Nuestro local</h4>
         </div>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dolorem dolores, placeat
-            obcaecati maxime optio nemo! Voluptatum minima vel a! Optio libero a animi doloremque esse
-            corrupti. Beatae, repellat perferendis!</p>
+        <p>Golden elixir, Lanus Oeste, Buenos Aires - Atención de Lunes a Viernes de  9.30 a  18.00 hs Sábados 9.30 a 13.00 hs</p>
     </div>
 </div>`
 
