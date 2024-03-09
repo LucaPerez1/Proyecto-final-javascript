@@ -15,7 +15,7 @@
 <body>
 
     <!-- INICIO HEADER  -->
-    <header class="navbar navbar-expand-lg bg-body-tertiary p-0 sticky-top">
+    <header class="navbar navbar-expand-lg bg-body-tertiary p-0">
         <div class="container-fluid encabezado px-2" data-bs-theme="dark">
             <a class="navbar-brand" href="../index.html">
                 <img class="logo" src="../img/Logo 2-04.png" alt="Logo">
@@ -44,8 +44,13 @@
                 </ul>
 
                 <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="¿Que estas buscando?"
-                        aria-label="Search">
+                    <div class="searchContainer">
+                        <input id="searchInput" class="form-control me-2" type="search"
+                            placeholder="¿Que estas buscando?" aria-label="Search">
+                        <div id="resultsList" class="resultsList">
+
+                        </div>
+                    </div>
                     <a class="carrito" href="carrito.html">
                         <span id="botonCantidad">0</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -144,6 +149,8 @@
     <!-- JS -->
     <script src="../js/funciones.js"></script>
     <script src="../js/carrito.js"></script>
+    <script src="../js/busqueda.js"></script>
+
 </body>
 
 </html>

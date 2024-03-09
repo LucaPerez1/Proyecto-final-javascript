@@ -5,18 +5,19 @@
 }
 
 .encabezado {
-	background-color: black;
-	border-top: 5px solid #ffa500;
-    
+    background-color: black;
+    border-top: 5px solid #ffa500;
+
     nav {
         ul {
             margin-right: 30px;
+
             li {
                 display: flex;
                 list-style: none;
                 margin: 0 20px;
                 align-items: center;
-                
+
                 a {
                     text-decoration: none;
                     color: white;
@@ -45,7 +46,7 @@
     position: relative;
     text-decoration: none;
 
-    span{
+    span {
         position: absolute;
         top: -4px;
         right: 11px;
@@ -55,6 +56,7 @@
         padding: 1px 5px;
         @include textoConParametos (0.8rem, 500)
     }
+
     svg {
         width: 24px;
         height: 24px;
@@ -65,10 +67,48 @@
         margin-bottom: 4px;
     }
 
-    p{
+    p {
         color: white;
         margin: 0px;
         text-align: center;
         @include textoConParametos (0.8rem, 500);
     }
+}
+
+.searchContainer {
+    position: relative;
+}
+
+.resultsList {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    list-style: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 0;
+    margin: 0;
+    z-index: 1000;
+    background-color: black;
+
+    a {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        text-decoration: none;
+        margin-top: 8px;
+        background-color: rgb(46, 46, 46);
+    }
+
+    img {
+        height: 80px;
+    }
+
+    p {
+        color: white;
+        @include textoConParametos (0.8rem, 400);
+        margin-bottom: 0px;
+        margin-left: 10px;
+    }
+
 }
