@@ -1,12 +1,13 @@
 .logo {
     width: 100px;
     margin-left: 20px;
-    margin-top: 8px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .encabezado {
     background-color: black;
-    border-top: 5px solid #ffa500;
+    border-top: 5px solid #ffd000;
 
     nav {
         ul {
@@ -24,7 +25,7 @@
                     @include textoConParametos (1.1rem, 700);
 
                     &:hover {
-                        color: orange;
+                        color: #ffd000;
                     }
                 }
             }
@@ -45,6 +46,7 @@
 .carrito {
     position: relative;
     text-decoration: none;
+    margin-left: 16px;
 
     span {
         position: absolute;

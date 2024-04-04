@@ -33,7 +33,7 @@
     }
 
     a {
-        color: #ffa500;
+        color: #ffd000;
         @include textoConParametos (1rem, 300);
         text-decoration: none;
         
@@ -50,7 +50,9 @@
     margin-bottom: 15px;
 
     svg {
-        color: #ffa500;
+        width: 20px;
+        height: 20px;
+        color: #ffd000;
         margin-right: 15px;
     }
 
@@ -81,7 +83,7 @@
 }
 
 .btnEnvio {
-    background-color: orange;
+    background-color: #ffd000;
     color: black;
     @include textoConParametos (1rem, 500);
     border: white solid 1px;
@@ -139,7 +141,8 @@
 
 //NOTIFICAION PRODUCTO AGREGADO 
 .notificaionAgregado{
-    color: white;
+    color: black;
+    @include textoConParametos (1rem, 400);
     padding: 14px 6px;
     display: flex;
     flex-direction: row;

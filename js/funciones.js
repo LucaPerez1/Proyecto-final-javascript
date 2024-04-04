@@ -13,6 +13,12 @@ const traerProductosLS = () => {
     return JSON.parse(localStorage.getItem("productos")) || [];
 }
 
+function formatearPrecioARS(precio) {
+    return precio.toLocaleString('es-AR', {
+        style: 'currency',
+        currency: 'ARS'
+    });
+}
 //FUNCIONES PARA OBTENER LA ID
 const obtenerIdProductos = () => {
     return JSON.parse(localStorage.getItem("producto")) || 0;
@@ -45,12 +51,23 @@ window.onload = function () {
     filtroCategoria();
 }
 
+const tituloProductos = (categoria) => {
+    let titulo;
+    if (categoria.toLowerCase() === "todos") {
+        titulo = "Productos";
+    } else {
+        titulo = categoria;
+    }
+    document.getElementById("tituloProductos").innerHTML = titulo;
+}
+
 const filtroCategoria = () => {
     const productos = traerProductosLS();
     const categoria = obtenerCategoria();
-    const productosFiltro = categoria === 'todos' ? productos : productos.filter(item => item.categoria === categoria);
+    const productosFiltro = categoria.toLowerCase() === 'todos' ? productos : productos.filter(item => item.categoria === categoria);
 
     renderizarProductos(productosFiltro);
+    tituloProductos(categoria);
 }
 
 //FUNNCIONES CARRITO
@@ -85,11 +102,13 @@ const agregarProductoAlCarrito = () => {
 const sumaDelTotal = () => {
     const carrito = traerCarrito();
 
-    return carrito.reduce((acumulador, item) => acumulador += item.precio, 0)
+    const total =carrito.reduce((acumulador, item) => acumulador += item.precio, 0)
+
+    return formatearPrecioARS(total)
 }
 
 const renderCostoTotal = () => {
-    document.getElementById("costoTotal").innerHTML = "$" + sumaDelTotal();
+    document.getElementById("costoTotal").innerHTML = sumaDelTotal();
 }
 
 const eliminarCarrito = () => {
@@ -120,7 +139,7 @@ const notificacionEliminarCarrito = () => {
         title: "¿Seguro que quieres eliminarlo?",
         text: "¡Eliminaras todos los productos del carrito!",
         icon: "warning",
-        iconColor: "#ffa500",
+        iconColor: "#ffd000",
         background: "#242424",
         color: "#ffffff",
         showCancelButton: true,
@@ -136,7 +155,7 @@ const notificacionEliminarCarrito = () => {
                 color: "#ffffff",
                 text: "Todos los productos del carrito fueron eliminados",
                 icon: "success",
-                iconColor: "#ffa500",
+                iconColor: "#ffd000",
                 confirmButtonColor: "#ffa500",
             }).then(() => {
                 eliminarCarrito();
@@ -152,7 +171,7 @@ const notificacionProductoAgregado = (producto) => {
         duration: 2000,
         avatar: `${producto.imagen}`,
         className: "notificaionAgregado",
-        backgroundColor: "#ffa500",
+        backgroundColor: "#ffd000",
         offset: {
             x: 0,
             y: 110,

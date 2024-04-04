@@ -68,7 +68,7 @@
 
 //BOTON DESPLEGABLE
 .desplegable {
-    display: flex;
+    display: none;
     justify-content: center;
     margin-top: 40px;
 
@@ -86,5 +86,35 @@
     color: white;
     margin-bottom: 0px;
     margin-right: 15px;
+    }
+}
+
+//navbar lateral
+.navLateral {
+    background-color: black;
+    display: block;
+
+    h2{
+        color: #ffd000;
+        @include textoConParametos (1.3rem, 500);
+        margin-left: 30px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    ul {
+        padding-left: 30px;
+    }
+
+    li {
+        margin-top: 8px;
+        color: white;
+        list-style: none;
+        @include textoConParametos (1.1rem, 500);
+        cursor: pointer;
+
+        &:hover {
+            color: #ffd000;
+        }
     }
 }

@@ -2,7 +2,7 @@
 /* datos */
 
 .datos {
-    background: linear-gradient(to right, orange, #e4ac20);
+    background: linear-gradient(to top, #ffd000, #e4ac20);
     padding: 20px;
     border-radius: 15px;
     max-height: 800px;
@@ -84,7 +84,7 @@ label {
 /* INICIO BTN */ 
 
 .btn-primary {
-    background-color: orange;
+    background-color:#ffd000;
     color: black;
     @include textoConParametos (1.1rem, 500);
     border: none;

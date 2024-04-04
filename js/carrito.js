@@ -8,13 +8,15 @@ function renderCarrito() {
     </div>`;
 
         for (const producto of carrito) {
+            const precioFormateado = formatearPrecioARS(producto.precio);
+
             contenido += `<div class="contenedorCarrito">
         <div class="col-xl-1 col-md-1 col-sm-1"><img src="${producto.imagen}" alt="${producto.nombre}"></div>
         <div class="col-xl-5 col-md-5 col-sm-3">
             <h2>${producto.nombre}</h2>
         </div>
         <div class="col-xl-5 col-md-5 col-sm-3">
-            <h3>$${producto.precio}</h3>
+            <h3>${precioFormateado}</h3>
         </div>
         <div class="col-xl-1 col-md-1 col-sm-1">
             <svg xmlns="http://www.w3.org/2000/svg" height="20" fill="currentColor"
@@ -28,7 +30,7 @@ function renderCarrito() {
 
         contenido += `<div class="total">
     <p>Total a pagar:</p>
-    <p>$${sumaDelTotal()}</p>
+    <p>${formatearPrecioARS(sumaDelTotal())}</p>
     <button class="d-flex btn-primary" onclick="finalizarCompra()">Finalizar compra</button>
 </div>`
 
@@ -48,5 +50,6 @@ function renderCarrito() {
 
     document.getElementById("carrito").innerHTML = contenido;
 }
+
 
 renderCarrito();

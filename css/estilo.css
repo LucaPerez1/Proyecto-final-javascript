@@ -16,12 +16,13 @@ body {
 .logo {
   width: 100px;
   margin-left: 20px;
-  margin-top: 8px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .encabezado {
   background-color: black;
-  border-top: 5px solid #ffa500;
+  border-top: 5px solid #ffd000;
 }
 .encabezado nav ul {
   margin-right: 30px;
@@ -39,7 +40,7 @@ body {
   font-weight: 700;
 }
 .encabezado nav ul li a:hover {
-  color: orange;
+  color: #ffd000;
 }
 .encabezado form {
   display: flex;
@@ -53,6 +54,7 @@ body {
 .carrito {
   position: relative;
   text-decoration: none;
+  margin-left: 16px;
 }
 .carrito span {
   position: absolute;
@@ -266,7 +268,7 @@ figure {
 }
 
 .desplegable {
-  display: flex;
+  display: none;
   justify-content: center;
   margin-top: 40px;
 }
@@ -285,6 +287,33 @@ figure {
   color: white;
   margin-bottom: 0px;
   margin-right: 15px;
+}
+
+.navLateral {
+  background-color: black;
+  display: block;
+}
+.navLateral h2 {
+  color: #ffd000;
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-left: 30px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.navLateral ul {
+  padding-left: 30px;
+}
+.navLateral li {
+  margin-top: 8px;
+  color: white;
+  list-style: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+.navLateral li:hover {
+  color: #ffd000;
 }
 
 .cardProducto {
@@ -320,7 +349,7 @@ figure {
   margin-bottom: 40px;
 }
 .informacionProducto a {
-  color: #ffa500;
+  color: #ffd000;
   font-size: 1rem;
   font-weight: 300;
   text-decoration: none;
@@ -336,7 +365,9 @@ figure {
   margin-bottom: 15px;
 }
 .descuento svg {
-  color: #ffa500;
+  width: 20px;
+  height: 20px;
+  color: #ffd000;
   margin-right: 15px;
 }
 .descuento h4 {
@@ -365,7 +396,7 @@ figure {
 }
 
 .btnEnvio {
-  background-color: orange;
+  background-color: #ffd000;
   color: black;
   font-size: 1rem;
   font-weight: 500;
@@ -417,7 +448,9 @@ figure {
 }
 
 .notificaionAgregado {
-  color: white;
+  color: black;
+  font-size: 1rem;
+  font-weight: 400;
   padding: 14px 6px;
   display: flex;
   flex-direction: row;
@@ -434,7 +467,7 @@ figure {
 /*INCIO CONTACTO*/
 /* datos */
 .datos {
-  background: linear-gradient(to right, orange, #e4ac20);
+  background: linear-gradient(to top, #ffd000, #e4ac20);
   padding: 20px;
   border-radius: 15px;
   max-height: 800px;
@@ -513,7 +546,7 @@ label {
 /* FIN DE SECCION CONTACTO */
 /* INICIO BTN */
 .btn-primary {
-  background-color: orange;
+  background-color: #ffd000;
   color: black;
   font-size: 1.1rem;
   font-weight: 500;
@@ -611,14 +644,14 @@ label {
   background-color: rgb(24, 24, 24);
   padding: 30px 40px;
   margin: 25px 15px;
-  box-shadow: 0px 8px 10px;
+  box-shadow: 0px 8px 15px;
 }
 .contenedorInformacion h2 {
   font-size: 1.4rem;
   font-weight: 700;
   margin-bottom: 30px;
   color: white;
-  border-bottom: 5px solid #ffa500;
+  border-bottom: 4px solid #ffd000;
   display: inline-block;
   padding-bottom: 12px;
 }
@@ -630,7 +663,7 @@ label {
 }
 
 /* MEDIA */
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   /* footer */
   .footerGrupo1 {
     width: 70%;
@@ -653,6 +686,12 @@ label {
   }
   .logoFooter {
     width: 250px;
+  }
+  .navLateral {
+    display: none;
+  }
+  .desplegable {
+    display: flex;
   }
 }
 @media (max-width: 992px) {

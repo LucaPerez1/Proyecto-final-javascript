@@ -1,13 +1,14 @@
 //INICIO FUNCION RENDERIZAR PRODUCTO (PAGINA ESPECIFICA DEL PRODUCTO)
 function renderizarProducto() {
     const producto = traerProductoLS();
-    let contenido = `<div class="col-xl-5 col-md-6 col-sm-6 contenedorImagen">
+    const precioFormateado = formatearPrecioARS(producto.precio);
+    let contenido = `<div class="col-xl-5 col-md-6 col-sm-10 contenedorImagen">
     <img src="${producto.imagen}" alt="${producto.nombre}" >
 </div>
 
-<div class="col-xl-6 col-md-6 col-sm-6 informacionProducto">
+<div class="col-xl-6 col-md-6 col-sm-10 informacionProducto">
     <h2>${producto.nombre}</h2>
-    <h3>$${producto.precio}</h3>
+    <h3>${precioFormateado}</h3>
     <div class="descuento">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
             class="bi bi-cash" viewBox="0 0 16 16">
